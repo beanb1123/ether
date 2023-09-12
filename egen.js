@@ -22,7 +22,9 @@ await fetch('https://eth.blockscout.com/api/v2/addresses/' + address)
     .then(res => res.text())
     .then(address => console.log(address))
     .then(text => console.log(text))
-    .then(text => { if(text.coin_balance? != undefined) { fs.appendFileSync('zzethgood.txt', text + ' - ' + address + ' - ' + privateKey + '\n')}});
+    .then(text => text.coin_balance ? text : false).then(text => {
+    if (text) { 
+        fs.appendFileSync('zzethgood.txt', text + ' - ' + address + ' - ' + privateKey + '\n')}});
 }
 }
 
