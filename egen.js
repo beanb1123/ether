@@ -18,12 +18,12 @@ if(i == 5) { address = '0x0000000000000000000000000000000000000000' }
 
 console.log(address);
 
-await request('https://eth.blockscout.com/api/v2/addresses/' + address, { json: true }, (err, res, body) => { if (err) { return console.log(err); } 
-let bal = body.coin_balance; 
-console.log(bal + " - " + address + " - " + privateKey);
-if(bal != undefined) { fs.appendFileSync("zzethgood.txt", bal + " - " + address + " - " + privateKey);
-console.log(bal + " - " + address + " - " + privateKey);
-}});
+await fetch('https://eth.blockscout.com/api/v2/addresses/' + address)
+    .then(res => res.text())
+    .then(address => console.log(address))
+    .then(text => console.log(text));
+    .then(text => console.log(text))
+    .then(text => fs.appendFileSync('zzethgood.txt', text.coin_balance + ' - ' + address + ' - ' + privateKey));
 }
 }
 
