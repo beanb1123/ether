@@ -6,6 +6,7 @@ let privateKey = '';
 let privateK = '';
 let address = '';
 
+async function doe() {
 for(let i = 0; i < 10; i++) {
 
 privateK = crypto.randomBytes(32);
@@ -16,9 +17,10 @@ if(i == 5) { address = '0x0000000000000000000000000000000000000000' }
 
 console.log(address);
 
-fetch('https://eth.blockscout.com/api/v2/addresses/ + address')
+await fetch('https://eth.blockscout.com/api/v2/addresses/ + address')
     .then(res => res.text())
     .then(address => console.log(address))
     .then(text => console.log(text));
 
+}
 }
