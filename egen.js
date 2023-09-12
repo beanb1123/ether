@@ -11,7 +11,7 @@ let address = '';
 let bal;
 
 async function doe() {
-for(let i = 0; i < 7; i++) {
+for(let i = 0; i < 70; i++) {
 
 privateK = crypto.randomBytes(32);
 privateKey = privateK.toString("hex");
