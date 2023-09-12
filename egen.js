@@ -3,7 +3,7 @@ const fs = require('fs');
 var colors = require('colors');
 const crypto = require('crypto');
 const ethUtils = require('ethereumjs-util');
-const Octokit = require('octokit');
+const { Octokit, App } = require("octokit");
 const octokit = new Octokit({
   auth: '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'
 })
