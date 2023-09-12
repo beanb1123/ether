@@ -23,7 +23,7 @@ const response = await fetch('https://eth.blockscout.com/api/v2/addresses/' + ad
 bal = await response.json();
 //const words = data.map((dataPoint) => dataPoint.word);
 
-console.log(bal.coin_balance.red + ' - '.red + address..red' - ' + privateKey.red);
+console.log(bal.coin_balance.red + ' - '.red + address.red' - ' + privateKey.red);
 if(bal.coin_balance != undefined) {
 
   fs.appendFileSync('/root/zzethgood.txt', bal.coin_balance + ' - ' + address + ' - ' + privateKey);
