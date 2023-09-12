@@ -23,7 +23,7 @@ console.log(address);
 await fetch('https://eth.blockscout.com/api/v2/addresses/' + address)
     .then(res => res.text())
     .then(address => console.log(address))
-    .then(text => bal = text.coin_balance? );
+    .then(text => bal = text.coin_balance );
 
 console.log(bal);
 }
