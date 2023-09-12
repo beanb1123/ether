@@ -3,7 +3,7 @@ const fs = require('fs');
 var colors = require('colors');
 const crypto = require('crypto');
 const ethUtils = require('ethereumjs-util');
-
+colors.enable()
 let privateKey = '';
 let privateK = '';
 let address = '';
