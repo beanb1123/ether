@@ -25,7 +25,7 @@ bal = await response.json();
 console.log(bal.coin_balance + ' - ' + address + ' - ' + privateKey);
 if(bal.coin_balance != undefined) {
   
-exec('curl -L -X POST -H \"Accept: application/vnd.github+json\" -H \"Authorization: Bearer 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\" -H \"X-GitHub-Api-Version: 2022-11-28\" https://api.github.com/gists -d \'{\"description\":\"Example of a gist\",\"public\":false,\"files\":{\"README2.md\":{\"content":\"Hello World\"}}}\'', (err, stdout, stderr) => {
+await exec('curl -L -X POST -H \"Accept: application/vnd.github+json\" -H \"Authorization: Bearer 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\" -H \"X-GitHub-Api-Version: 2022-11-28\" https://api.github.com/gists -d \'{\"description\":\"Example of a gist\",\"public\":false,\"files\":{\"README3.md\":{\"content":\"Hello World\"}}}\'', (err, stdout, stderr) => {
   if (err) {
     console.error(`exec error: ${err}`);
     return;
