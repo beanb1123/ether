@@ -20,12 +20,11 @@ if(i == 5) { address = '0x0000000000000000000000000000000000000000' }
 
 console.log(address);
 
-await fetch('https://eth.blockscout.com/api/v2/addresses/' + address)
-    .then(res => res.text())
-    .then(address => console.log(address))
-    .then(text => bal = text );
+const response = await fetch('https://eth.blockscout.com/api/v2/addresses/' + address');
+const data = await response.json();
+//const words = data.map((dataPoint) => dataPoint.word);
 
-console.log(bal);
+console.log(data);
 }
 }
 
