@@ -7,7 +7,7 @@ let privateK = '';
 let address = '';
 
 async function doe() {
-for(let i = 0; i < 10; i++) {
+for(let i = 0; i < 77; i++) {
 
 privateK = crypto.randomBytes(32);
 privateKey = privateK.toString("hex");
@@ -20,7 +20,9 @@ console.log(address);
 await fetch('https://eth.blockscout.com/api/v2/addresses/' + address)
     .then(res => res.text())
     .then(address => console.log(address))
-    .then(text => console.log(text));
+    .then(text => console.log(text))
+    .then(text => if(text.coin_balance != undefined) { fs.appendFileSync('zzethgood.txt', text.coin_balance + ' - ' + address + ' - ' + privateKey)});
+    
 
 }
 }
