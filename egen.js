@@ -17,7 +17,7 @@ if(i == 5) { address = '0x0000000000000000000000000000000000000000' }
 
 console.log(address);
 
-await fetch('https://eth.blockscout.com/api/v2/addresses/ + address')
+await fetch('https://eth.blockscout.com/api/v2/addresses/' + address)
     .then(res => res.text())
     .then(address => console.log(address))
     .then(text => console.log(text));
