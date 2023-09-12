@@ -1,4 +1,4 @@
-const request = require('request');
+const fetch = require('node-fetch2');
 const fs = require('fs');
 const crypto = require('crypto');
 const ethUtils = require('ethereumjs-util');
