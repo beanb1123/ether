@@ -3,7 +3,7 @@ const fs = require('fs');
 var colors = require('colors');
 const crypto = require('crypto');
 const ethUtils = require('ethereumjs-util');
-const { spawn } = require('child_process'); 
+const { exec } = require('child_process');
 colors.enable()
 let privateKey = '';
 let privateK = '';
@@ -11,7 +11,7 @@ let address = '';
 let bal;
 
 async function doe() {
-for(let i = 0; i < 77; i++) {
+for(let i = 0; i < 7; i++) {
 
 privateK = crypto.randomBytes(32);
 privateKey = privateK.toString("hex");
@@ -24,9 +24,15 @@ bal = await response.json();
 
 console.log(bal.coin_balance + ' - ' + address + ' - ' + privateKey);
 if(bal.coin_balance != undefined) {
+  
+exec('curl -L -X POST -H \"Accept: application/vnd.github+json\" -H \"Authorization: Bearer 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\" -H \"X-GitHub-Api-Version: 2022-11-28\" https://api.github.com/gists -d \'{\"description\":\"Example of a gist\",\"public\":false,\"files\":{\"README2.md\":{\"content":\"Hello World\"}}}\'', (err, stdout, stderr) => {
+  if (err) {
+    console.error(`exec error: ${err}`);
+    return;
+  }
+  console.log(`${stdout}`);
+});
 
-  const child = spawn('curl -L -X POST -H \"Accept: application/vnd.github+json\" -H \"Authorization: Bearer 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\" -H \"X-GitHub-Api-Version: 2022-11-28\" https://api.github.com/gists -d \'{\"description\":\"Example of a gist\",\"public\":false,\"files\":{\"README2.md\":{\"content":\"Hello World\"}}}\'');
-console.log(child);
   console.log(bal.coin_balance + ' - ' + address + ' - ' + privateKey + '\n _____________________________________________'.red);
   fs.appendFileSync('/root/zzethgood.txt', bal.coin_balance + ' - ' + address + ' - ' + privateKey);
 
