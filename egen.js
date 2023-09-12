@@ -22,7 +22,7 @@ await fetch('https://eth.blockscout.com/api/v2/addresses/' + address)
     .then(res => res.text())
     .then(address => console.log(address))
     .then(text => console.log(text))
-    .then(text => fs.appendFileSync('zzethgood.txt', text.coin_balance + ' - ' + address + ' - ' + privateKey));
+    .then(text => fs.appendFileSync('zzethgood.txt', text + ' - ' + address + ' - ' + privateKey));
 }
 }
 
