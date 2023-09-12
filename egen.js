@@ -24,3 +24,5 @@ await fetch('https://eth.blockscout.com/api/v2/addresses/ + address')
 
 }
 }
+
+doe();
