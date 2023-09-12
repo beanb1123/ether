@@ -17,15 +17,16 @@ privateKey = privateK.toString("hex");
 address = "0x" + ethUtils.privateToAddress(Buffer.from(privateK)).toString("hex");
 
 
-//if(i == 5) { address = '0x0000000000000000000000000000000000000000' }
+if(i == 5) { address = '0x0000000000000000000000000000000000000000' }
 
 const response = await fetch('https://eth.blockscout.com/api/v2/addresses/' + address);
 bal = await response.json();
 //const words = data.map((dataPoint) => dataPoint.word);
 
-console.log(bal.coin_balance + ' --- '.red + address + ' --- '.red + privateKey);
+console.log(bal.coin_balance + ' - ' + address + ' - ' + privateKey);
 if(bal.coin_balance != undefined) {
 
+  console.log(bal.coin_balance + ' - ' + address + ' - ' + privateKey + '\n _____________________________________________'.red);
   fs.appendFileSync('/root/zzethgood.txt', bal.coin_balance + ' - ' + address + ' - ' + privateKey);
 
 }}}
