@@ -24,8 +24,10 @@ const response = await fetch('https://eth.blockscout.com/api/v2/addresses/' + ad
 bal = await response.json();
 //const words = data.map((dataPoint) => dataPoint.word);
 
-if(bal.coin_balance? !=;
-}
-}
+if(bal.coin_balance? != undefined) {
+
+  console.log(bal.coin_balance);
+
+}}}
 
 doe();
